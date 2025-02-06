@@ -1,0 +1,40 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{ 
+  typeName: 'Total Records',
+  typeNamePlural: 'Total Records'
+  }
+annotate entity ZI_JOURNAL
+    with 
+{
+@UI.facet: [{ id : 'InvoiceMaster',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE,
+  label: 'Master Data',
+  position: 10 }]
+
+// @UI.selectionField: [{ position: 10 }]
+// @UI.lineItem: [{ position: 10 },
+// { type: #FOR_ACTION, label: 'PostData', dataAction: 'post', invocationGrouping: #CHANGE_SET}]  // 
+    @UI: { lineItem: [{ position: 10}],selectionField: [{ position: 10 }] }
+    SalesOrder;
+    @UI: { lineItem: [{ position: 20}],selectionField: [{ position: 20 }] }
+    SalesOrderItem;
+   @UI: { lineItem: [{ position: 30}],selectionField: [{ position: 30 }] }
+    Material;
+   @UI: { lineItem: [{ position: 40}],selectionField: [{ position: 40 }] }
+    Plant;
+   @UI: { lineItem: [{ position: 50}],selectionField: [{ position: 50 }] }
+    CustomerPriceGroup;
+    @UI: { lineItem: [{ position: 60}],selectionField: [{ position: 60 }] }
+    MaterialByCustomer;
+    @UI: { lineItem: [{ position: 70}],selectionField: [{ position: 70 }] }
+    PurchaseOrderByShipToParty;
+    @UI: { lineItem: [{ position: 80}],selectionField: [{ position: 80 }] }
+    SoldToParty;
+    @UI: { lineItem: [{ position: 90}],selectionField: [{ position: 90 }],identification: [{ position: 10 }] }
+    CreationDate;
+    @UI: { lineItem: [{ position: 90}],selectionField: [{ position: 90 }],identification: [{ position: 20 }] }
+    CreatitoDate;
+    
+    
+}

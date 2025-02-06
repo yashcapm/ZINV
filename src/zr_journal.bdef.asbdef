@@ -1,0 +1,24 @@
+managed with additional save
+implementation in class zbp_r_journal02 unique;
+strict ( 2 );
+//with draft;
+
+define behavior for ZR_JOURNAL //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  determination post on save  {create;}
+  field ( readonly ) SalesOrder, SalesOrderItem  ;
+
+//draft action post;Ś
+ //action ( features : instance ) post result [1] $self;
+
+
+}

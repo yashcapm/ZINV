@@ -1,0 +1,14 @@
+managed implementation in class zbp_r_journal_tmg unique;
+strict ( 2 );
+
+define behavior for ZR_JOURNAL_TMG //alias <alias_name>
+persistent table ztt_journalitem
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Fdate, Tdate;
+}
